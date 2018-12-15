@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post">
+      {% carf_token %}
+      {% for field in form %}
+        <p> <center>
+              {{ field.label_tag }}<br>
+              {{ field }}</center>
+               <small style="color: grey">{{ field.help_text }}</small></form>
+              {% endif' %}<center>
+              {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+              {% endfor %}</center>
+        </p>
+      {% endfor %}
+      <center><button type="submit" class="btn btn-primary">Create an account</button> </center>
+  </form>
+ {% endblock %}
